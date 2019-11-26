@@ -268,7 +268,10 @@ metadata:
   name: prometheus-pv-claim
   namespace: monitoring
 spec:
-  storageClassName: aks
+  storageClassName: oci
+  selector:
+    matchLabels:
+      failure-domain.beta.kubernetes.io/zone: "US-ASHBURN-AD-1"
   accessModes:
     - ReadWriteOnce
   resources:
